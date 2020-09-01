@@ -1,5 +1,5 @@
-@import 'config';
-@import 'utilities';
+@import "config";
+@import "utilities";
 
 // General Stules
 * {
@@ -19,6 +19,10 @@ a {
 }
 
 ul {
+  list-style: none;
+}
+
+li {
   list-style: none;
 }
 
@@ -69,9 +73,7 @@ img {
     &.current {
       border-color: $main-color;
     }
-
   }
-
 }
 
 // Header
@@ -92,7 +94,6 @@ img {
         font-size: 4rem;
         line-height: 1.2;
       }
-
     }
   }
 
@@ -102,9 +103,7 @@ img {
 
 // Home Sections
 #home {
-
   &-a {
-
     .specials {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -116,7 +115,6 @@ img {
       color: $main-color;
       padding-bottom: 0.4rem;
     }
-
   }
 
   &-b {
@@ -151,4 +149,85 @@ img {
       }
     }
   }
+
+  &-c {
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5rem;
+      text-align: center;
+
+      &-step {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 28px;
+        backgrouND: $main-color;
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+        line-height: 15px;
+        padding: 1rem;
+        transition: all 1s;
+      }
+
+      &-icon {
+        border-radius: 50%;
+        background: $dark-color;
+        color: #fff;
+        padding: 2rem;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        position: relative;
+        transition: all 1s;
+
+        &:hover {
+          background: $main-color;
+          height: 90px;
+          width: 90px;
+          line-height: 90px;
+          /* transform: scale(1.3); */
+
+          .process-step {
+            background: $dark-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Footer
+#main-footer {
+
+  background: $dark-color;
+  color: #fff;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .social {
+      display: flex;
+    }
+  }
+
+  li {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+  }
+
+  i {
+    border: 2px #fff solid;
+    border-radius: 50%;
+    padding: .5rem;
+
+    &:hover {
+      background: $main-color;
+    }
+  }
+
 }
