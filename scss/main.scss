@@ -205,6 +205,8 @@ img {
 
 // About Sections
 #about {
+
+  // About A
   &-a {
     .about-info {
       display: grid;
@@ -242,6 +244,65 @@ img {
       margin: 1rem;
     }
   }
+
+  // About B
+  &-b {
+    .progress {
+      overflow: hidden;
+      background: $medium-color;
+      border-radius: 5px;
+      height: 20px;
+      width: 100%;
+      margin-bottom: .6rem;
+
+      div {
+        background: $main-color;
+        height: 100%;
+      }
+    }
+  }
+
+  // About C
+  &-c {
+    .about-logos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 2rem;
+
+      img {
+        width: 70%;
+      }
+    }
+  }
+
+  // About D
+  &-d {
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: .5rem;
+
+      .bio {
+        padding: 0.8rem;
+        border: 1px $medium-color solid;
+        border-radius: 3px;
+      }
+
+      .bio-img {
+
+        display: flex;
+        align-items: center;
+
+        img {
+          border-radius: 50%;
+          width: 50px;
+          margin-right: .5rem;
+        }
+      }
+    }
+  }
+
+
 }
 
 // Footer
@@ -261,7 +322,7 @@ img {
   }
 
   li {
-    padding: 1rem 1.5rem;
+    padding: 1rem;
     cursor: pointer;
   }
 
