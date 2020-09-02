@@ -98,7 +98,11 @@ img {
   }
 
   //Header Inner
-  &-inner {}
+  &-inner {
+    background: $bg-image no-repeat 20% 30% / cover;
+    height: 5.5rem;
+    border-bottom: 3px $main-color solid;
+  }
 }
 
 // Home Sections
@@ -195,6 +199,47 @@ img {
           }
         }
       }
+    }
+  }
+}
+
+// About Sections
+#about {
+  &-a {
+    .about-info {
+      display: grid;
+      grid-template:
+        'bioimg bio bio'
+        'aw1 aw2 aw3';
+      grid-gap: 1.2rem;
+    }
+
+    // Grid Areas
+    .bio-img {
+      grid-area: bioimg;
+    }
+
+    .bio {
+      grid-area: bio;
+      padding: 0.8rem;
+      border-left: 3px $main-color solid;
+    }
+
+    .award-1 {
+      grid-area: aw1;
+    }
+
+    .award-2 {
+      grid-area: aw2;
+    }
+
+    .award-3 {
+      grid-area: aw3;
+    }
+
+    .fas {
+      color: $main-color;
+      margin: 1rem;
     }
   }
 }
