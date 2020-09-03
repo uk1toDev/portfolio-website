@@ -166,7 +166,7 @@ img {
         top: 0;
         right: 0;
         font-size: 28px;
-        backgrouND: $main-color;
+        background: $main-color;
         border-radius: 50%;
         height: 15px;
         width: 15px;
@@ -211,8 +211,8 @@ img {
     .about-info {
       display: grid;
       grid-template:
-        'bioimg bio bio'
-        'aw1 aw2 aw3';
+        "bioimg bio bio"
+        "aw1 aw2 aw3";
       grid-gap: 1.2rem;
     }
 
@@ -253,7 +253,7 @@ img {
       border-radius: 5px;
       height: 20px;
       width: 100%;
-      margin-bottom: .6rem;
+      margin-bottom: 0.6rem;
 
       div {
         background: $main-color;
@@ -280,7 +280,7 @@ img {
     .testimonials {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-gap: .5rem;
+      grid-gap: 0.5rem;
 
       .bio {
         padding: 0.8rem;
@@ -289,25 +289,166 @@ img {
       }
 
       .bio-img {
-
         display: flex;
         align-items: center;
 
         img {
           border-radius: 50%;
           width: 50px;
-          margin-right: .5rem;
+          margin-right: 0.5rem;
         }
       }
     }
   }
+}
 
+// Work
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}
 
+.item {
+  position: relative;
+  background: $main-color;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background: inherit;
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
+    transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+  // Bring in main color overlay
+  &:hover:after {
+    transform: scale(2) translateX(0) translateY(0) rotate(-28deg);
+  }
+
+  // Scale image on hover
+  &:hover &-image {
+    transform: scale(1.2);
+  }
+
+  // Bring in text on hover
+  &:hover &-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &-image {
+    height: auto;
+    transform: translateZ(0);
+    display: block;
+    transition: transform 750ms cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+  &-image:before {
+    content: '';
+    display: block;
+    padding-top: 75%;
+    overflow: hidden;
+  }
+
+  &-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    line-height: 0;
+  }
+
+  &-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    text-align: center;
+    z-index: 1;
+    color: #fff;
+    transform: translateY(-20%);
+    transition: opacity 500ms cubic-bezier(0.2, 1, 0.3, 1),
+      transform 500ms cubic-bezier(0.2, 1, 0.3, 1);
+    transition-delay: 300ms;
+  }
+
+  &-text-wrap {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-text-title {
+    font-size: 2rem;
+    padding: 0 1rem;
+    margin: 5px 0 0 0;
+  }
+
+  &-text-category {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    margin: 0;
+  }
+
+  /* .items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .item {
+      position: relative;
+
+      .item-img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      &:hover .overlay {
+        height: 100%;
+        width: 100%;
+        opacity: 0.9;
+      }
+
+      .overlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0%;
+        width: 0%;
+        transition: 1s ease;
+        background-color: $main-color;
+        overflow: hidden;
+
+        .text {
+          color: white;
+          font-size: 20px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+        }
+      }
+    }
+  } */
 }
 
 // Footer
 #main-footer {
-
   background: $dark-color;
   color: #fff;
 
@@ -329,11 +470,10 @@ img {
   i {
     border: 2px #fff solid;
     border-radius: 50%;
-    padding: .5rem;
+    padding: 0.5rem;
 
     &:hover {
       background: $main-color;
     }
   }
-
 }
