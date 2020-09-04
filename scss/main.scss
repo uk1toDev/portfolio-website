@@ -315,7 +315,7 @@ img {
   overflow: hidden;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     background: inherit;
@@ -352,7 +352,7 @@ img {
   }
 
   &-image:before {
-    content: '';
+    content: "";
     display: block;
     padding-top: 75%;
     overflow: hidden;
@@ -445,6 +445,50 @@ img {
       }
     }
   } */
+}
+
+// Contact Me
+#contact {
+  &-a {
+    .text-fields {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+    }
+
+    .text-input {
+      padding: 0.5rem 1rem;
+    }
+
+    .message-input {
+      grid-column: span 2;
+      height: 100px;
+      margin-bottom: 5rem;
+    }
+
+    button {
+      width: 50%;
+    }
+  }
+
+  &-b {
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-c {
+    .header-content {
+      text-align: center;
+      padding: 2rem 0;
+
+      h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+      }
+    }
+  }
 }
 
 // Footer
